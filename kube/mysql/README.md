@@ -94,7 +94,7 @@ For MySQL 5.7 and earlier:
 
 Exemple: ```SET PASSWORD FOR 'username'@'localhost' = PASSWORD('new_password');```
 
--```SET PASSWORD FOR 'root'@'localhost' = PASSWORD('new_password'); ```
+- ```SET PASSWORD FOR 'root'@'localhost' = PASSWORD('new_password'); ```
 
 - ```SET PASSWORD FOR '%'@'localhost' = PASSWORD('new_password'); ```
 
