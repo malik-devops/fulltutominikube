@@ -1,3 +1,6 @@
 [submodule "ftm-react"]
 	path = ftm-react
 	url = https://github.com/malik-devops/ftm-react.git
+[submodule "ftm-golang"]
+	path = ftm-golang
+	url = https://github.com/malik-devops/ftm-golang.git
