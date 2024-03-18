@@ -8,16 +8,6 @@ Open your terminal and run the command:
 
 ```minikube start```
 
-## create deployment
-
-Create mysql deployment.
-
-```kubectl create -f mysql-statefulset.yml -n <namespace>```
-
-To see if the deployment and pod are created successfully.
-
-```kubectl get deploy,po -n <namespace>```
-
 ## create secret
 
 Create mysql secret.
@@ -35,6 +25,16 @@ Decode the secret password :
 Copy ROOT_PASSWORD value and run.
 
 ```echo "<value>" | base64 --decode```
+
+## create deployment
+
+Create mysql deployment.
+
+```kubectl create -f mysql-statefulset.yml -n <namespace>```
+
+To see if the deployment and pod are created successfully.
+
+```kubectl get deploy,po -n <namespace>```
 
 ## create service
 
