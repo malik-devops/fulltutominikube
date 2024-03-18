@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: product-ui
+  name: product-ui
+  namespace: project
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-ui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: product-ui
+    spec:
+      containers:
+      - image: <user-name>/product-ui:latest
+        name: productui
+        env:
+        - name: REACT_APP_API_URL
+          value: "product-api.project.svc"
+        resources: {}
+status: {}

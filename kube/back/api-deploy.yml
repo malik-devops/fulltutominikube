@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-api
+  template:
+    metadata:
+      labels:
+        app: product-api
+    spec:
+      containers:
+      - name: product-api
+        image: <user-name>/product-api:latest  # Remplacez par le nom de votre image Go
+        ports:
+        - containerPort: 8090
+        env:
+        - name: DB_HOST
+          value: "mysql.project.svc"
+        - name: DB_PORT
+          value: "3306"
+        - name: DB_USER
+          value: "root"
+        - name: DB_PASSWORD
+          valueFrom:
+                secretKeyRef:
+                  key: ROOT_PASSWORD
+                  name: mysecret
+        - name: DB_NAME
+          value: "shop"
