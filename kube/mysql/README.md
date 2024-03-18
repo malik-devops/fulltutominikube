@@ -106,7 +106,7 @@ Exemple: ```SET PASSWORD FOR 'username'@'localhost' = PASSWORD('new_password');`
 
 - ```exit```
 
-9- Update the current password on ftm-golang/.env file and on secrets yaml
+- Update the current password on ftm-golang/.env file and on secrets yaml
 
 Now you can connect to your database using the new password. it should work !!!
 
