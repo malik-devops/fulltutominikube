@@ -83,6 +83,12 @@ If you are connected to the database run:
 
 Now we have the passwords for localhost and %.
 
+## create database
+
+We need to create a database with the following: 
+
+```create database shop```
+
 ### NB
 if you want to change the password: 
 
