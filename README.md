@@ -44,4 +44,4 @@ In kube you can create and deploy your applications.
 
 This is a simple project named shop. you can create , list and delete a product. 
 
-let's go!!!# fulltutominikube
+let's go!!!
