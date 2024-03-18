@@ -22,7 +22,6 @@ You can also log or decribe the pod to see informations or warning if the pod is
 
 ```kubectl logs <pod-name> -n <namespace>```
 
-
 ## add service
 
 Create a service from the go-app deployment.
@@ -37,3 +36,26 @@ To view the project run on your terminal:
 
 ```minikube service product-api --url -n <namespace>```
 
+## Results
+
+|NAME                          |READY   |UP-TO-DATE   |AVAILABLE   |AGE
+|---|---|---|---|---|
+|deployment.apps/product-api   |1/1     |1            |1           |18m
+
+|NAME                              |READY   |STATUS    |RESTARTS   |AGE
+|---|---|---|---|---|
+|pod/mysql-0                       |1/1     |Running   |0          |90m
+|pod/product-api-f9f8d95ff-dwpbn   |1/1     |Running   |0          |18m
+
+|NAME                  |TYPE        |CLUSTER-IP      |EXTERNAL-IP   |PORT(S)        |AGE
+|---|---|---|---|---|-----|
+|service/mysql         |ClusterIP   |10.96.22.219    |<none>        |3306/TCP       |116m
+|service/product-api   |NodePort    |10.96.226.60    |<none>        |80:31242/TCP   |11m
+
+|NAME              |TYPE     |DATA   |AGE
+|---|---|---|-----|
+|secret/mysecret   |Opaque   |1      |123m
+
+|NAME                     |READY   |AGE
+|---|---|----|
+|statefulset.apps/mysql   |1/1     |90m

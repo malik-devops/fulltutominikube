@@ -41,3 +41,30 @@ In kube you can create and deploy your applications.
 This is a simple project named shop. you can create , list and delete a product. 
 
 let's go!!!
+
+## Results
+
+|NAME                          |READY   |UP-TO-DATE   |AVAILABLE   |AGE
+|---|---|---|---|---|
+|deployment.apps/product-api   |1/1     |1            |1           |18m
+|deployment.apps/product-ui    |1/1     |1            |1           |103s
+
+|NAME                              |READY   |STATUS    |RESTARTS   |AGE
+|---|---|---|---|---|
+|pod/mysql-0                       |1/1     |Running   |0          |90m
+|pod/product-api-f9f8d95ff-dwpbn   |1/1     |Running   |0          |18m
+|pod/product-ui-754dcc8ff4-xfg2t   |1/1     |Running   |0          |103s
+
+|NAME                  |TYPE        |CLUSTER-IP      |EXTERNAL-IP   |PORT(S)        |AGE
+|---|---|---|---|---|-----|
+|service/mysql         |ClusterIP   |10.96.22.219    |<none>        |3306/TCP       |116m
+|service/product-api   |NodePort    |10.96.226.60    |<none>        |80:31242/TCP   |11m
+|service/product-ui    |NodePort    |10.96.152.123   |<none>        |80:31855/TCP   |20s
+
+|NAME              |TYPE     |DATA   |AGE
+|---|---|---|-----|
+|secret/mysecret   |Opaque   |1      |123m
+
+|NAME                     |READY   |AGE
+|---|---|----|
+|statefulset.apps/mysql   |1/1     |90m

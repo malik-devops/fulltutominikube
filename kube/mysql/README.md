@@ -110,10 +110,20 @@ Exemple: ```SET PASSWORD FOR 'username'@'localhost' = PASSWORD('new_password');`
 
 Now you can connect to your database using the new password. it should work !!!
 
+## Results
 
+|NAME                              |READY   |STATUS    |RESTARTS   |AGE
+|---|---|---|---|---|
+|pod/mysql-0                       |1/1     |Running   |0          |90m
 
+|NAME                  |TYPE        |CLUSTER-IP      |EXTERNAL-IP   |PORT(S)        |AGE
+|---|---|---|---|---|-----|
+|service/mysql         |ClusterIP   |10.96.22.219    |<none>        |3306/TCP       |116m
 
+|NAME              |TYPE     |DATA   |AGE
+|---|---|---|-----|
+|secret/mysecret   |Opaque   |1      |123m
 
-
-
-
+|NAME                     |READY   |AGE
+|---|---|----|
+|statefulset.apps/mysql   |1/1     |90m
