@@ -8,16 +8,6 @@ Open your terminal and run the command:
 
 ```minikube start```
 
-## create deployment
-
-Create mysql deployment.
-
-```kubectl create -f mysql-statefulset.yml -n <namespace>```
-
-To see if the deployment and pod are created successfully.
-
-```kubectl get deploy,po -n <namespace>```
-
 ## create secret
 
 Create mysql secret.
@@ -26,7 +16,7 @@ Create mysql secret.
 
 To see if the deployment , secret and pod are created successfully.
 
-```kubectl get deploy,po,secret -n <namespace>```
+```kubectl get secret -n <namespace>```
 
 Decode the secret password :
 
@@ -36,6 +26,17 @@ Copy ROOT_PASSWORD value and run.
 
 ```echo "<value>" | base64 --decode```
 
+## create deployment
+
+Create mysql deployment.
+
+```kubectl create -f mysql-statefulset.yml -n <namespace>```
+
+To see if the deployment and pod are created successfully.
+
+```kubectl get sts,po,secret -n <namespace>```
+
+
 ## create service
 
 Create mysql service.
@@ -44,7 +45,7 @@ Create mysql service.
 
 To see if the deployment, service and pod are created successfully.
 
-```kubectl get deploy,po,svc -n <namespace>```
+```kubectl get sts,po,svc,secret -n <namespace>```
 
 
 ## connect to mysql
@@ -53,7 +54,7 @@ To connect to the database, we check if the pod is running. Let’s find the nam
 
 Check the pod name.
 
-```kubectl get deploy,po,secret -n <namespace>```
+```kubectl get sts,po,svc,secret -n <namespace>```
 
 Copy the pod name and run the following command: 
 
@@ -61,7 +62,7 @@ Copy the pod name and run the following command:
 
 ```mysql -u root -p```
 
-For the default password you enter ```password``` qnd you will be connected to the database. But this password is not configured on api project. 
+Enter the password ```echo "<value>" | base64 --decode``` and you will be connected to the database. 
 
 If you are connected to the database run:
 
@@ -80,9 +81,10 @@ If you are connected to the database run:
 | root | localhost | *819DF53CFB95644C53BF1CB33671C8BA388DB000 |
 | root | %         | *819DF53CFB95644C53BF1CB33671C8BA388DB000 |
 
-Now we have to change the passwords for user root.
+Now we have the passwords for localhost and %.
 
 ### NB
+if you want to change the password: 
 
 For MySQL 8.0 and later:
 
@@ -92,13 +94,13 @@ For MySQL 5.7 and earlier:
 
 ```SET PASSWORD FOR 'username'@'localhost' = PASSWORD('new_password');```
 
-To see the password defined on the secret, run the following command on your terminal. Copy the ROOT_PASSWORD value and decode for exemple ```echo UGFzc0AxMjM0 | base64 --decode```.
-
 6- ```SET PASSWORD FOR 'root'@'localhost' = PASSWORD('new_password'); ```
 
 7- ```SET PASSWORD FOR '%'@'localhost' = PASSWORD('new_password'); ```
 
 8- ```exit```
+
+9- Update the current password on .env file and on secrets yaml
 
 Now you can connect to your database using the new password. it should work !!!
 
