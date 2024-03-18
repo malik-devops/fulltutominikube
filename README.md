@@ -20,13 +20,9 @@ Now you can create a namespace application using the following command:
 
 React is a popular JavaScript library for building interactive and dynamic user interfaces. It's widely used in frontend development to create responsive and high-performance web applications.
 
-You can clone [the ui-project repository](https://github.com/malik-devops/ftm-react) on your machine. 
-
 ## Golang
 
 Go, also known as Golang, is an open-source programming language developed by Google. It's appreciated for its simplicity, performance, and native concurrency, making it a popular choice for backend and microservices development.
-
-You can clone [the api-project repository](https://github.com/malik-devops/ftm-golang) on your machine. 
 
 ## Dockerhub
 
