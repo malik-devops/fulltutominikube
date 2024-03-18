@@ -88,19 +88,19 @@ if you want to change the password:
 
 For MySQL 8.0 and later:
 
-```ALTER USER 'username'@'localhost' IDENTIFIED BY 'new_password';```
+Exemple : ```ALTER USER 'username'@'localhost' IDENTIFIED BY 'new_password';```
 
 For MySQL 5.7 and earlier:
 
-```SET PASSWORD FOR 'username'@'localhost' = PASSWORD('new_password');```
+Exemple: ```SET PASSWORD FOR 'username'@'localhost' = PASSWORD('new_password');```
 
-6- ```SET PASSWORD FOR 'root'@'localhost' = PASSWORD('new_password'); ```
+-```SET PASSWORD FOR 'root'@'localhost' = PASSWORD('new_password'); ```
 
-7- ```SET PASSWORD FOR '%'@'localhost' = PASSWORD('new_password'); ```
+- ```SET PASSWORD FOR '%'@'localhost' = PASSWORD('new_password'); ```
 
-8- ```exit```
+- ```exit```
 
-9- Update the current password on .env file and on secrets yaml
+9- Update the current password on ftm-golang/.env file and on secrets yaml
 
 Now you can connect to your database using the new password. it should work !!!
 
