@@ -1,0 +1,3 @@
+[submodule "ftm-react"]
+	path = ftm-react
+	url = https://github.com/malik-devops/ftm-react.git
