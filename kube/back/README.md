@@ -36,6 +36,22 @@ To view the project run on your terminal:
 
 ```minikube service product-api --url -n <namespace>```
 
+## add ingress
+
+Create an ingress from the api service.
+
+```kubectl create -f ingress.yaml -n <namespace>```
+
+To get ingress run the following command:
+
+```kubectl get ing -n <namespace>```
+
+Add the url on your local hosts. Go to your terminal and run:
+
+```sudo nano /etc/hosts```
+
+Add ```192.168.49.2    api.product.test```
+
 ## Results
 
 |NAME                          |READY   |UP-TO-DATE   |AVAILABLE   |AGE
@@ -59,3 +75,7 @@ To view the project run on your terminal:
 |NAME                     |READY   |AGE
 |---|---|----|
 |statefulset.apps/mysql   |1/1     |90m
+
+|NAME                                   |CLASS   |HOSTS              |ADDRESS   |PORTS   |AGE
+|---|---|---|---|---|-----|
+|ingress.networking.k8s.io/api-ingress      |nginx   |api.product.test             |80      |2h

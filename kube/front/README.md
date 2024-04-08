@@ -34,6 +34,23 @@ To view the project run on your terminal:
 
 ```minikube service product-ui --url -n <namespace>```
 
+## add ingress
+
+Create an ingress from the ui service.
+
+```kubectl create -f ingress.yaml -n <namespace>```
+
+To get ingress run the following command:
+
+```kubectl get ing -n <namespace>```
+
+Add the url on your local hosts. Go to your terminal and run:
+
+```sudo nano /etc/hosts```
+
+Add ```192.168.49.2    api.product.test```
+
+
 ## Results
 
 |NAME                          |READY   |UP-TO-DATE   |AVAILABLE   |AGE
@@ -48,4 +65,7 @@ To view the project run on your terminal:
 |---|---|---|---|---|-----|
 |service/product-ui    |NodePort    |10.96.152.123   |<none>        |80:31855/TCP   |20s
 
+|NAME                                   |CLASS   |HOSTS              |ADDRESS   |PORTS   |AGE
+|---|---|---|---|---|-----|
+|ingress.networking.k8s.io/ui-ingress      |nginx   |ui.product.test             |80      |2h
 

@@ -68,3 +68,8 @@ let's go!!!
 |NAME                     |READY   |AGE
 |---|---|----|
 |statefulset.apps/mysql   |1/1     |90m
+
+|NAME                                   |CLASS   |HOSTS              |ADDRESS   |PORTS   |AGE
+|---|---|---|---|---|-----|
+|ingress.networking.k8s.io/api-ingress      |nginx   |api.product.test             |80      |31m
+|ingress.networking.k8s.io/ui-ingress      |nginx   |ui.product.test             |80      |37m

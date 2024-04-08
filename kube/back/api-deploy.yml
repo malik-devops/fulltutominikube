@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: product-api
-        image: <user-name>/product-api:latest  # Remplacez par le nom de votre image Go
+        image: <user-name>/product-api:latest 
         ports:
         - containerPort: 8090
         env:

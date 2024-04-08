@@ -21,8 +21,5 @@ spec:
       containers:
       - image: <user-name>/product-ui:latest
         name: productui
-        env:
-        - name: REACT_APP_API_URL
-          value: "product-api.project.svc"
         resources: {}
 status: {}
