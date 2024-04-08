@@ -48,7 +48,7 @@ Add the url on your local hosts. Go to your terminal and run:
 
 ```sudo nano /etc/hosts```
 
-Add ```192.168.49.2    api.product.test```
+Add ```192.168.49.2    ui.product.test```
 
 
 ## Results
